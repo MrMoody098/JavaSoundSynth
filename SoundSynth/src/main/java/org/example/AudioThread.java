@@ -28,10 +28,7 @@ public class AudioThread extends Thread{
         AL.createCapabilities(ALC.createCapabilities(device)); // creates what device is currently capable so AL knows what is possible
         source = alGenSources();
         for (int i = 0; i < BUFFER_COUNT; i++) {
-            short[] samples = bufferSupplier.get();
-            if (samples != null) {
-                bufferSamples(samples);
-            }
+            bufferSamples(new short[0]);
         }
         alSourcePlay(source);
         catchInternalException();
@@ -45,10 +42,9 @@ public class AudioThread extends Thread{
                 Utils.handleProcedure(this::wait, true);
             }
             int processBuffers = alGetSourcei(source, AL_BUFFERS_PROCESSED);
-            for (int i = 0; i < processBuffers; i++)
+            for (int i = 0; i < processBuffers; ++i)
             {
                 short[] samples = bufferSupplier.get();
-                //if samples == null
                 if(samples == null){
                     running = false;
                     break;

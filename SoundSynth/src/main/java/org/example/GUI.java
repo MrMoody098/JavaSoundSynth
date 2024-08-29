@@ -15,7 +15,7 @@ public class GUI
     private final JFrame frame = new JFrame("GUI");
     private final AudioThread audioThread = new AudioThread(() ->
     {
-        if(shouldGenerate){
+        if(!shouldGenerate){
             return null;
         }
         short[] s = new short[AudioThread.BUFFER_SIZE];
