@@ -85,7 +85,7 @@ public class AudioThread extends Thread{
 
     private  void bufferSamples(short[] samples){
         int buf = buffers[bufferIndex++];
-        alBufferData(buf, AL_FORMAT_MONO16, samples, GUI.AudioInfo.SAMPLE_RATE);
+        alBufferData(buf, AL_FORMAT_MONO16, samples, JavaSoundSynth.AudioInfo.SAMPLE_RATE);
         alSourceQueueBuffers(source, buf);
         bufferIndex %= BUFFER_COUNT; // 1%8=1 -> 8%8 = 0 counts up from 0 to 8 and equals when there is no remainder
     }
