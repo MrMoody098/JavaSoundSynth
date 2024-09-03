@@ -8,6 +8,7 @@ import java.util.function.Supplier;
 
 import static org.lwjgl.openal.AL10.*;
 import static org.lwjgl.openal.ALC10.*;
+
 public class AudioThread extends Thread{
     static final int BUFFER_SIZE = 512;
     static final int BUFFER_COUNT = 8;
