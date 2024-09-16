@@ -1,6 +1,6 @@
 # JavaSoundSynth
 
-JavaSoundSynth is a simple Java-based sound synthesizer application. It uses the Java Swing framework for the graphical user interface and generates sound based on key presses.
+JavaSoundSynth is a simple Java-based sound synthesizer application. It uses the Java Swing framework for the graphical user interface and generates sound based on key presses using the openAL API.
 
 ## Features
 
